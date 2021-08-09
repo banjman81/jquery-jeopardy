@@ -107,6 +107,21 @@ function loadPage(){
             $('.active').addClass('complete')
             $('.complete').removeClass('active')
             console.log($('.active').length)
+            $('.the-messege').remove()
+            $('.messege-board').append($(`
+                <div class="the-messege">
+                    <h4><span class="green">Correct</span><h4>
+                </div>
+            `))
+            answerInput.val('')
+        }
+        else{
+            $('.the-messege').remove()
+            $('.messege-board').append($(`
+                <div class="the-messege">
+                    <h4><span class="red">Incorrect</span><h4>
+                </div>
+            `))
         }
     })
 
@@ -137,6 +152,7 @@ function loadPage(){
 
     $('.question-slot').on('click', function(){
         if($('.active').length < 1){
+            $('.the-messege').remove()
             const resultClass = $(this).attr('class').split(' ')
             $(this).addClass('active')
             currentQuestion = resultClass[1]
@@ -155,11 +171,11 @@ function loadPage(){
     })
 
 
-    $('.start').on('click', function(){
-        count++
-        localStorage.setItem('count', count)
-        $('.score').text(count)
-    })
+    // $('.start').on('click', function(){
+    //     count++
+    //     localStorage.setItem('count', count)
+    //     $('.score').text(count)
+    // })
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
