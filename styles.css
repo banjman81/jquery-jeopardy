@@ -9,6 +9,15 @@ body{
     height: 500px;
     width: 800px;
 }
+.table{
+    width: 800px;
+    margin: 0 auto;
+}
+.table td{
+    width: 150px;
+    border: 1px solid black;
+    font-weight: bold;
+}
 .question-slot{
     /* border: 1px solid black; */
     background-color: rgba(51, 108, 161, 0.801);
